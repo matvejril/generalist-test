@@ -19,8 +19,6 @@
 <script>
     import ActivityItem from "./ActivityItem.vue"
 
-    // import { readFromLocalStorage } from '../assets/helpers/localStorage';
-
     export default {
         name: 'activity-list',
         data () {
@@ -45,14 +43,6 @@
             clearListHandler() {
                 this.$store.dispatch('clearList')
             }
-        },
-        mounted: function () {
-            // let getActivityListFromLocalStorage = readFromLocalStorage();
-            // if (getActivityListFromLocalStorage.length > 0) {
-            //     return getActivityListFromLocalStorage
-            // } else {
-            //     return this.getActivityList
-            // }
         }
     }
 </script>

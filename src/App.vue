@@ -48,6 +48,12 @@
     padding: 5px 10px;
     color: #ffffff;
   }
+  .btn.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #bdbdbd;
+    border-color: #bdbdbd;
+  }
   .btn-success {
     background-color: #5cb85c;
     &:hover {

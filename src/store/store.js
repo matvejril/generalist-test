@@ -20,15 +20,18 @@ export default new Vuex.Store({
     actions: {
         // подготовить данные для мутации
         addActivity(context) {
+            document.querySelector('.btn-success').classList.add("disabled");
             axios
                 .get('https://www.boredapi.com/api/activity')
                 .then(response => {
                     let activity = response.data;
                     context.commit('addActivity', activity);
                     writeToLocalStorage(context.state.activityList);
+                    document.querySelector('.btn-success').classList.remove("disabled");
                 })
                 .catch(function (error) {
                     // handle error
+                    console.log(error)
                 });
         },
         removeActivity(context, key) {

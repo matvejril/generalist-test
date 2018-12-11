@@ -12,11 +12,20 @@
 <script>
     import ActivityList from "./ActivityList.vue";
     import ActivityStatistics from './ActivityStatistics.vue'
+
+    import { readFromLocalStorage } from '../assets/helpers/localStorage';
+
     export default {
         name: "app-content",
         components: {
             ActivityList,
             ActivityStatistics
+        },
+        mounted: function () {
+            let getActivityListFromLocalStorage = readFromLocalStorage();
+            if (!getActivityListFromLocalStorage.length) {
+                this.$store.dispatch('addActivity');
+            }
         }
     }
 </script>

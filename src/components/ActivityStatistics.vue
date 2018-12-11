@@ -67,7 +67,7 @@
                 this.getActivityList.forEach(function(item) {
                     totalPrice += item.price;
                 });
-                return totalPrice.toFixed(1)
+                return totalPrice.toFixed(2)
             }
         },
         methods: {
